@@ -14,10 +14,10 @@ public class Main {
 
     /**
      * @param args For the program to work, you must specify the launch parameters
-     *  !zip paths to files or directories that need to be archived separated by a space
-     *  !unzip for unpacking, the path to the zipped file separated by a space
+     *             !zip paths to files or directories that need to be archived separated by a space
+     *             !unzip for unpacking, the path to the zipped file separated by a space
      */
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         ZipManager zipManager = new SimpleArchive();
 
         if (args.length > 1) {
@@ -34,38 +34,15 @@ public class Main {
                         System.out.println("File: " + e.getMessage() + " not found");
                     }
                 }
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
             System.out.println("Parameters not set!");
         }
 
 
     }
-
-
-//    public static void zipDir(String filePath) throws IOException {
-//
-//        Path zipFilePath = Files.createFile(Paths.get("newzip.zip"));
-//
-//        try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zipFilePath))) {
-//            Path sourceDirPath = Paths.get(filePath); //директория c файлами
-//            Files.walk(sourceDirPath).filter(path -> !Files.isDirectory(path)) //проходимся по всем файлам
-//                    .forEach(path -> {
-//                        ZipEntry zipEntry = new ZipEntry(sourceDirPath.relativize(path).toString());
-//                        try {
-//                            zos.putNextEntry(zipEntry);
-//                            zos.write(Files.readAllBytes(path));
-//                            zos.closeEntry();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    });
-//
-//        }
-//
-//    }
 
 
 }

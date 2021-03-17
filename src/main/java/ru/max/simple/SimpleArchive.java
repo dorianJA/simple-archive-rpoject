@@ -18,7 +18,7 @@ public class SimpleArchive implements ZipManager {
     /**
      * The field that stores the path where the files will be unpacked
      */
-    private static final String DEST_UNZIP_PATH = "."+File.separator+"unzipFiles";
+    private static final String DEST_UNZIP_PATH = "." + File.separator + "unzipFiles";
     /**
      * Archive name
      */
@@ -30,10 +30,11 @@ public class SimpleArchive implements ZipManager {
 
     /**
      * Method from file paths, returns a list of files
+     *
      * @param paths Accepts parameters that are passed when the application starts
      * @return list of files, excluding parameters !zip and !unzip
      */
-    public List<File> listFiles(String...paths) {
+    public List<File> listFiles(String... paths) {
         return Stream.of(paths).filter(s -> !s.startsWith("!zip") && !s.startsWith("!unzip"))
                 .map(File::new)
                 .collect(Collectors.toList());
@@ -41,8 +42,9 @@ public class SimpleArchive implements ZipManager {
 
     /**
      * The method writes all files to a zip archive
+     *
      * @param files Accepts a list of files to archive
-     * @exception  IOException if it cannot find or create a file or directory
+     * @throws IOException if it cannot find or create a file or directory
      */
     @Override
     public void zipFile(List<File> files) throws IOException {
@@ -91,8 +93,9 @@ public class SimpleArchive implements ZipManager {
      * The method creates files and directories in the same hierarchy
      * as in the zip archive, and writes the read data to them,
      * files are unpacked to the path specified in the field DEST_UNZIP_PATH
+     *
      * @param fileZip accepts path to .zip archive
-     * @exception IOException if the file is not found, or the directory or file cannot be created
+     * @throws IOException if the file is not found, or the directory or file cannot be created
      */
     @Override
     public void unZipFile(String fileZip) throws IOException {
