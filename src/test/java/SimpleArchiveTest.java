@@ -10,9 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by maxxii on 15.03.2021.
- */
+
 class SimpleArchiveTest {
 
     private final SimpleArchive simpleArchive = new SimpleArchive();
