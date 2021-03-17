@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mages>
+    <mages>
+        <spec>Fire</spec>
+        <lvl>120</lvl>
+    </mages>
+    <mages>
+        <spec>Frost</spec>
+        <lvl>120</lvl>
+    </mages>
+</mages>

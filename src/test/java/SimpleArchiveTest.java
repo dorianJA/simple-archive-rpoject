@@ -54,7 +54,7 @@ class SimpleArchiveTest {
                 .filter(path -> Files.isRegularFile(path))
                 .map(Path::getFileName)
                 .collect(Collectors.toList());
-        
+
         System.out.println("Actual: " + actualData);
         System.out.println("Expected: " + expectedData);
 
